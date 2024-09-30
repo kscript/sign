@@ -1,0 +1,29 @@
+name: AutoSign
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '00 17 * * *'
+
+jobs:
+  Sign:
+    runs-on: windows-latest
+    steps:
+      - name: Install Node.js, NPM
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: Check out branch
+        uses: actions/checkout@v2
+        with:
+          ref: master
+
+      - name: Sign
+        env:
+          WANXIANG_TOKEN: ${{ secrets.WANXIANG_TOKEN }}
+          WANXIANG_COOKIE: ${{ secrets.WANXIANG_COOKIE }}
+          YIGE_COOKIE: ${{ secrets.YIGE_COOKIE }}
+          YIGE_TOKEN: ${{ secrets.YIGE_TOKEN }}
+        run: |
+          npm ci
+          npm run start
