@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/kscript/sign/issues"
   },
-  "homepage": "https://github.com/kscript/sign#readme"
+  "homepage": "https://github.com/kscript/sign#readme",
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  }
 }
