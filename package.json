@@ -1,0 +1,20 @@
+{
+  "name": "sign",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kscript/sign.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kscript/sign/issues"
+  },
+  "homepage": "https://github.com/kscript/sign#readme"
+}
