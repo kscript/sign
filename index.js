@@ -63,11 +63,37 @@ const yige = async () => {
   .catch(console.log)
 }
 
+const keling = async () => {
+  const cookie = process.env.KELING_COOKIE
+  if (!cookie) return
+  console.log('可灵 开始签到')
+  return fetch(`https://klingai.kuaishou.com/api/user/profile`, {
+    "headers": {
+      "accept": "application/json, text/plain, */*",
+      "accept-language": "zh",
+      "sec-ch-ua": "\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\"",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-origin",
+      cookie
+    },
+    "referrer": "https://klingai.kuaishou.com/",
+    "referrerPolicy": "strict-origin-when-cross-origin",
+    "body": null,
+    "method": "GET",
+    "mode": "cors",
+    "credentials": "include"
+  })
+}
+
 const main = async (sign) => {
   return Object.keys(sign).map(key => sign[key]())
 }
 
 main({
   wanxiang,
-  yige
+  yige,
+  keling
 })
