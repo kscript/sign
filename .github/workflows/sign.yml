@@ -24,6 +24,7 @@ jobs:
           WANXIANG_COOKIE: ${{ secrets.WANXIANG_COOKIE }}
           YIGE_COOKIE: ${{ secrets.YIGE_COOKIE }}
           YIGE_TOKEN: ${{ secrets.YIGE_TOKEN }}
+          KELING_COOKIE: ${{ secrets.KELING_COOKIE }}
         run: |
           npm ci
           npm run start
